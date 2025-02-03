@@ -24,19 +24,22 @@ The algorithm was evaluated based on the following metrics:
 - **Load Distribution**
 - **Packet Delivery Delay**
 
-# Result Matrix
+# Performance Comparison Matrix
 
-| **Metric** | **SGBC (Proposed)** | **GBC (Grid-Based Clustering)** | **DBC (Distance-Based Clustering)** |
-|------------|---------------------|-----------------------------|-----------------------------|
-| **Optimal Re-computation Time** (Std. Dev. = 5, Avg. Velocity = 5) | **33** | **23** | **19** |
-| **Optimal Re-computation Time** (Std. Dev. = 10, Avg. Velocity = 5) | **19** | **17** | **16** |
-| **Packet Loss (%) at Std. Dev. 5** | **Lower** | **Higher** | **Higher** |
-| **Number of Cluster Heads (100 nodes)** | **Higher** | **Lower** | **Lower** |
-| **Number of Cluster Heads (200 nodes)** | **Higher** | **Lower** | **Lower** |
-| **Maximum Nodes in a Cluster (100 nodes)** | **Lower (Better Load Distribution)** | **Higher** | **Higher** |
-| **Maximum Nodes in a Cluster (200 nodes)** | **Lower (Better Load Distribution)** | **Higher** | **Higher** |
-| **Packet Delivery Delay (Std. Dev. = 2)** | **Lowest Delay** | **Higher Delay** | **Higher Delay** |
-| **Packet Delivery Delay (Std. Dev. = 10)** | **Lowest Delay** | **Higher Delay** | **Higher Delay** |
+| **Performance Metric** | **SGBC (Proposed)** | **GBC (Grid-Based Clustering)** | **DBC (Distance-Based Clustering)** | **Best Performing Algorithm** |
+|------------------------|---------------------|-----------------------------|-----------------------------|---------------------------|
+| **Optimal Re-computation Time** | **Higher (Less Frequent Reclustering)** | **Lower** | **Lower** | **SGBC** |
+| **Packet Loss (%)** | **Lowest** | **Higher** | **Higher** | **SGBC** |
+| **Number of Cluster Heads (100 Nodes)** | **More** | **Fewer** | **Fewer** | **SGBC** |
+| **Number of Cluster Heads (200 Nodes)** | **More** | **Fewer** | **Fewer** | **SGBC** |
+| **Load Balancing** | **Better (Even Distribution of Nodes)** | **Poorer** | **Poorer** | **SGBC** |
+| **Maximum Nodes in a Cluster (100 Nodes)** | **Lower (Better Load Distribution)** | **Higher** | **Higher** | **SGBC** |
+| **Maximum Nodes in a Cluster (200 Nodes)** | **Lower (Better Load Distribution)** | **Higher** | **Higher** | **SGBC** |
+| **Energy Efficiency** | **Higher (Less Cluster Head Load)** | **Lower** | **Lower** | **SGBC** |
+| **Packet Delivery Delay** | **Lower** | **Higher** | **Higher** | **SGBC** |
+| **Network Stability** | **Higher** | **Lower** | **Lower** | **SGBC** |
+| **Scalability** | **Better (Handles More Nodes Efficiently)** | **Moderate** | **Poor** | **SGBC** |
+
 
 ## Key Observations from Results:
 - **SGBC consistently outperforms** GBC and DBC in terms of **packet loss, load balancing, and delay reduction**.
