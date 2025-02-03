@@ -24,22 +24,23 @@ The algorithm was evaluated based on the following metrics:
 - **Load Distribution**
 - **Packet Delivery Delay**
 
-### Results Matrix
-| Standard Deviation | SGBC Reclustering Time | DBC Reclustering Time | GBC Reclustering Time | Packet Loss (SGBC) | Packet Loss (GBC) |
-|--------------------|-----------------------|-----------------------|-----------------------|--------------------|--------------------|
-| 0.5               | 47                    | 29                    | 20                    | Low                | High               |
-| 5.0               | 33                    | 23                    | 19                    | Low                | High               |
-| 10.0              | 19                    | 17                    | 16                    | Low                | High               |
-| 15.0              | 12                    | 12                    | 12                    | Low                | High               |
-| 20.0              | 9                     | 10                    | 9                     | Low                | High               |
+# Result Matrix
 
-### Key Observations
-- SGBC **maintains stable clustering** even at higher standard deviations.
-- SGBC exhibits **lower packet loss** than GBC and DBC.
-- SGBC achieves **higher reclustering time**, leading to **better energy efficiency**.
-- **Balanced cluster head distribution** improves network lifetime.
+| **Metric** | **SGBC (Proposed)** | **GBC (Grid-Based Clustering)** | **DBC (Distance-Based Clustering)** |
+|------------|---------------------|-----------------------------|-----------------------------|
+| **Optimal Re-computation Time** (Std. Dev. = 5, Avg. Velocity = 5) | **33** | **23** | **19** |
+| **Optimal Re-computation Time** (Std. Dev. = 10, Avg. Velocity = 5) | **19** | **17** | **16** |
+| **Packet Loss (%) at Std. Dev. 5** | **Lower** | **Higher** | **Higher** |
+| **Number of Cluster Heads (100 nodes)** | **Higher** | **Lower** | **Lower** |
+| **Number of Cluster Heads (200 nodes)** | **Higher** | **Lower** | **Lower** |
+| **Maximum Nodes in a Cluster (100 nodes)** | **Lower (Better Load Distribution)** | **Higher** | **Higher** |
+| **Maximum Nodes in a Cluster (200 nodes)** | **Lower (Better Load Distribution)** | **Higher** | **Higher** |
+| **Packet Delivery Delay (Std. Dev. = 2)** | **Lowest Delay** | **Higher Delay** | **Higher Delay** |
+| **Packet Delivery Delay (Std. Dev. = 10)** | **Lowest Delay** | **Higher Delay** | **Higher Delay** |
 
-## Future Work
-- Extend **SGBC to real-world VANET scenarios** considering **traffic signals, road junctions, and time-of-day variations**.
-- Adapt the methodology for **Mobile Ad Hoc Networks (MANETs)**.
-- Optimize further using **Machine Learning-based cluster head selection**.
+## Key Observations from Results:
+- **SGBC consistently outperforms** GBC and DBC in terms of **packet loss, load balancing, and delay reduction**.
+- SGBC maintains **higher optimal re-clustering time**, meaning **less frequent reclustering**, which **saves energy**.
+- **Packet loss is lower in SGBC**, showing **better network stability**.
+- **More evenly distributed cluster heads** in SGBC lead to **better energy efficiency** and **longer network lifetime**.
+- **SGBC significantly reduces packet delivery delay**, making it a **better choice for time-sensitive VANET applications**.
